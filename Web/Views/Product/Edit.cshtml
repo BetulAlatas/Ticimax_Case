@@ -1,0 +1,95 @@
+﻿@model Web.ViewModel.ProductViewModel
+@{
+    ViewBag.Title = "Ürün Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <!-- Row -->
+    <div class="row">
+        <!-- Column -->
+        <div class="col-lg-12 col-xlg-9 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material" action="/Product/Edit" method="post">
+                        <input type="hidden" name="Id" value="@Model.Product.Id" />
+                        <input type="hidden" name="Status" value="True" />
+                        <div class="form-group mb-4">
+                            <label class="col-sm-12">Kategori</label>
+                            <div class="col-sm-12 border-bottom">
+                                <select class="form-select shadow-none p-0 border-0 form-control-line js-example-basic-multiple" multiple="multiple" name="CategoryId">
+                                    @foreach (var item in Model.Categories.OrderBy(x => x.SortOrder))
+                                    {
+                                        if (Model.MapList.Count(x => x.CategoryId == item.Id) > 0)
+                                        {
+                                            <option value="@item.Id" selected>@item.Name</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-sm-12">Marka</label>
+                            <div class="col-sm-12 border-bottom">
+                                <select class="form-select shadow-none p-0 border-0 form-control-line" name="BrandId">
+                                    @foreach (var item in Model.Brands)
+                                    {
+                                        if (Model.Product.BrandId == item.Id)
+                                        {
+                                            <option value="@item.Id" selected>@item.Name</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="example-email" class="col-md-12 p-0">Ürün Adı</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" class="form-control p-0 border-0" name="Name" value="@Model.Product.Name">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="example-email" class="col-md-12 p-0">Açıklama</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" class="form-control p-0 border-0" name="Description" value="@Model.Product.Description">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Fiyat</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" name="Price" class="form-control p-0 border-0" value="@Model.Product.Price">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">İndirim Fiyatı</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" name="DiscountPrice" class="form-control p-0 border-0" value="@Model.Product.DiscountPrice">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Stok Adedi</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="number" name="Quantitiy" class="form-control p-0 border-0" value="@Model.Product.Quantitiy">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div class="col-sm-12">
+                                <button class="btn btn-success">Kaydet</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+    </div>
+    <!-- Row -->
+</div>

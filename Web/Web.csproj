@@ -1,0 +1,597 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACCA0FB1-1692-4F02-B044-ABE4A178D5CC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44302</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-utilities.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-utilities.min.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap.rtl.css" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap.rtl.min.css" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.esm.js" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Contents\css\icons\font-awesome\css\fa-brands.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fa-brands.min.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fa-regular.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fa-regular.min.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fa-solid.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fa-solid.min.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fontawesome-all.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fontawesome-all.min.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fontawesome.css" />
+    <Content Include="Contents\css\icons\font-awesome\css\fontawesome.min.css" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Contents\css\icons\themify-icons\fonts\themify.svg" />
+    <Content Include="Contents\css\icons\themify-icons\ie7\ie7.css" />
+    <Content Include="Contents\css\icons\themify-icons\ie7\ie7.js" />
+    <Content Include="Contents\css\icons\themify-icons\themify-icons.css" />
+    <Content Include="Contents\css\icons\weather-icons\css\weather-icons-core.css" />
+    <Content Include="Contents\css\icons\weather-icons\css\weather-icons-variables.css" />
+    <Content Include="Contents\css\icons\weather-icons\css\weather-icons-wind.css" />
+    <Content Include="Contents\css\icons\weather-icons\css\weather-icons-wind.min.css" />
+    <Content Include="Contents\css\icons\weather-icons\css\weather-icons.css" />
+    <Content Include="Contents\css\icons\weather-icons\css\weather-icons.min.css" />
+    <Content Include="Contents\css\icons\weather-icons\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-beaufort.css" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-day.css" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-direction.css" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-misc.css" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-moon.css" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-neutral.css" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-night.css" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-time.css" />
+    <Content Include="Contents\css\icons\weather-icons\less\css\variables-wind-names.css" />
+    <Content Include="Contents\css\style.css" />
+    <Content Include="Contents\css\style.min.css" />
+    <Content Include="Contents\js\app-style-switcher.js" />
+    <Content Include="Contents\js\custom.js" />
+    <Content Include="Contents\js\pages\dashboards\dashboard1.js" />
+    <Content Include="Contents\js\sidebarmenu.js" />
+    <Content Include="Contents\js\waves.js" />
+    <Content Include="Contents\plugins\bower_components\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+    <Content Include="Contents\plugins\bower_components\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="Contents\plugins\bower_components\chartist\dist\chartist.min.css" />
+    <Content Include="Contents\plugins\bower_components\chartist\dist\chartist.min.js" />
+    <Content Include="Contents\plugins\bower_components\counterup\jquery.counterup.min.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\gmaps.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\gmaps.min.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\jquery.gmaps.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.controls.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.core.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.events.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.geofences.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.geometry.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.layers.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.map_types.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.markers.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.native_extensions.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.overlays.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.routes.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.static.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.streetview.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.styles.js" />
+    <Content Include="Contents\plugins\bower_components\gmaps\lib\gmaps.utils.js" />
+    <Content Include="Contents\plugins\bower_components\jquery-sparkline\jquery.charts-sparkline.js" />
+    <Content Include="Contents\plugins\bower_components\jquery-sparkline\jquery.sparkline.min.js" />
+    <Content Include="Contents\plugins\bower_components\jquery\dist\core.js" />
+    <Content Include="Contents\plugins\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="Contents\plugins\bower_components\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Contents\plugins\bower_components\perfect-scrollbar\dist\css\perfect-scrollbar.min.css" />
+    <Content Include="Contents\plugins\bower_components\perfect-scrollbar\dist\js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Contents\plugins\bower_components\perfect-scrollbar\dist\js\perfect-scrollbar.min.js" />
+    <Content Include="Contents\plugins\bower_components\perfect-scrollbar\dist\perfect-scrollbar.common.js" />
+    <Content Include="Contents\plugins\bower_components\perfect-scrollbar\dist\perfect-scrollbar.esm.js" />
+    <Content Include="Contents\plugins\bower_components\perfect-scrollbar\dist\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Contents\plugins\bower_components\perfect-scrollbar\dist\perfect-scrollbar.min.js" />
+    <Content Include="Contents\plugins\bower_components\popper.js\dist\esm\popper-utils.min.js" />
+    <Content Include="Contents\plugins\bower_components\popper.js\dist\esm\popper.min.js" />
+    <Content Include="Contents\plugins\bower_components\popper.js\dist\popper-utils.min.js" />
+    <Content Include="Contents\plugins\bower_components\popper.js\dist\popper.min.js" />
+    <Content Include="Contents\plugins\bower_components\popper.js\dist\umd\popper-utils.min.js" />
+    <Content Include="Contents\plugins\bower_components\popper.js\dist\umd\popper.min.js" />
+    <Content Include="Contents\plugins\images\custom-select.png" />
+    <Content Include="Contents\plugins\images\favicon.png" />
+    <Content Include="Contents\plugins\images\large\img1.jpg" />
+    <Content Include="Contents\plugins\images\logo-icon.png" />
+    <Content Include="Contents\plugins\images\logo-light-icon.png" />
+    <Content Include="Contents\plugins\images\logo-light-text.png" />
+    <Content Include="Contents\plugins\images\logo-text.png" />
+    <Content Include="Contents\plugins\images\users\1-old.jpg" />
+    <Content Include="Contents\plugins\images\users\1.jpg" />
+    <Content Include="Contents\plugins\images\users\1.png" />
+    <Content Include="Contents\plugins\images\users\2.jpg" />
+    <Content Include="Contents\plugins\images\users\2.png" />
+    <Content Include="Contents\plugins\images\users\3.jpg" />
+    <Content Include="Contents\plugins\images\users\3.png" />
+    <Content Include="Contents\plugins\images\users\4.jpg" />
+    <Content Include="Contents\plugins\images\users\5.jpg" />
+    <Content Include="Contents\plugins\images\users\6.jpg" />
+    <Content Include="Contents\plugins\images\users\7.jpg" />
+    <Content Include="Contents\plugins\images\users\8.jpg" />
+    <Content Include="Contents\plugins\images\users\agent.jpg" />
+    <Content Include="Contents\plugins\images\users\agent2.jpg" />
+    <Content Include="Contents\plugins\images\users\arijit.jpg" />
+    <Content Include="Contents\plugins\images\users\d1.jpg" />
+    <Content Include="Contents\plugins\images\users\d2.jpg" />
+    <Content Include="Contents\plugins\images\users\d3.jpg" />
+    <Content Include="Contents\plugins\images\users\d4.jpg" />
+    <Content Include="Contents\plugins\images\users\d5.jpg" />
+    <Content Include="Contents\plugins\images\users\genu.jpg" />
+    <Content Include="Contents\plugins\images\users\govinda.jpg" />
+    <Content Include="Contents\plugins\images\users\hritik.jpg" />
+    <Content Include="Contents\plugins\images\users\pawandeep.jpg" />
+    <Content Include="Contents\plugins\images\users\profile.png" />
+    <Content Include="Contents\plugins\images\users\ritesh.jpg" />
+    <Content Include="Contents\plugins\images\users\sonu.jpg" />
+    <Content Include="Contents\plugins\images\users\varun.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\BrandViewModel.cs" />
+    <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\ProductViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Contents\bootstrap\dist\.DS_Store" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <Content Include="Contents\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="Contents\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="Contents\css\.DS_Store" />
+    <Content Include="Contents\css\icons\.DS_Store" />
+    <Content Include="Contents\css\icons\font-awesome\less\fa-brands.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\fa-regular.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\fa-solid.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\fontawesome.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_animated.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_bordered-pulled.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_core.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_fixed-width.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_icons.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_larger.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_list.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_mixins.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_rotated-flipped.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_screen-reader.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_stacked.less" />
+    <Content Include="Contents\css\icons\font-awesome\less\_variables.less" />
+    <Content Include="Contents\css\icons\font-awesome\scss\fa-brands.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\fa-regular.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\fa-solid.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\fontawesome.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_animated.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_core.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_icons.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_larger.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_list.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_mixins.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_stacked.scss" />
+    <Content Include="Contents\css\icons\font-awesome\scss\_variables.scss" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Contents\css\icons\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Contents\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Contents\css\icons\themify-icons\fonts\themify.eot" />
+    <Content Include="Contents\css\icons\themify-icons\fonts\themify.ttf" />
+    <Content Include="Contents\css\icons\themify-icons\fonts\themify.woff" />
+    <Content Include="Contents\css\icons\themify-icons\themify-icons.less" />
+    <Content Include="Contents\css\icons\weather-icons\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Contents\css\icons\weather-icons\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Contents\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Contents\css\icons\weather-icons\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-beaufort.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-day.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-direction.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-misc.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-moon-aliases.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-moon.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-neutral.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-night.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-time.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-wind-aliases.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-wind-degrees.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-classes\classes-wind.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-beaufort.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-day.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-direction.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-misc.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-moon.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-neutral.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-night.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-time.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\icon-variables\variables-wind-names.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\mappings\wi-forecast-io.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\mappings\wi-owm.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\mappings\wi-wmo4680.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\mappings\wi-yahoo.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\weather-icons-classes.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\weather-icons-core.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\weather-icons-variables.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\weather-icons-wind.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\weather-icons-wind.min.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\weather-icons.less" />
+    <Content Include="Contents\css\icons\weather-icons\less\weather-icons.min.less" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-beaufort.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-day.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-direction.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-misc.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-moon-aliases.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-moon.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-neutral.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-night.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-time.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-wind-aliases.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-wind-degrees.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-classes\classes-wind.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-beaufort.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-day.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-direction.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-misc.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-moon.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-neutral.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-night.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-time.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\icon-variables\variables-wind-names.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\mappings\wi-forecast-io.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\mappings\wi-owm.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\mappings\wi-wmo4680.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\mappings\wi-yahoo.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\weather-icons-classes.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\weather-icons-core.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\weather-icons-variables.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\weather-icons-wind.min.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\weather-icons-wind.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\weather-icons.min.scss" />
+    <Content Include="Contents\css\icons\weather-icons\sass\weather-icons.scss" />
+    <Content Include="Contents\plugins\.DS_Store" />
+    <Content Include="Contents\plugins\bower_components\.DS_Store" />
+    <Content Include="Contents\plugins\bower_components\gmaps\gmaps.min.js.map" />
+    <Content Include="Contents\plugins\images\.DS_Store" />
+    <Content Include="Contents\scss\.DS_Store" />
+    <Content Include="Contents\scss\bootstrap\.DS_Store" />
+    <Content Include="Contents\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Contents\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Contents\scss\bootstrap\bootstrap-utilities.scss" />
+    <Content Include="Contents\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_floating-labels.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_form-check.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_form-control.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_form-range.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_form-select.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_form-text.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_input-group.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_labels.scss" />
+    <Content Include="Contents\scss\bootstrap\forms\_validation.scss" />
+    <Content Include="Contents\scss\bootstrap\helpers\_clearfix.scss" />
+    <Content Include="Contents\scss\bootstrap\helpers\_colored-links.scss" />
+    <Content Include="Contents\scss\bootstrap\helpers\_position.scss" />
+    <Content Include="Contents\scss\bootstrap\helpers\_ratio.scss" />
+    <Content Include="Contents\scss\bootstrap\helpers\_stretched-link.scss" />
+    <Content Include="Contents\scss\bootstrap\helpers\_text-truncation.scss" />
+    <Content Include="Contents\scss\bootstrap\helpers\_visually-hidden.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_alert.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_caret.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_container.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_forms.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_grid.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_image.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_lists.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_resize.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_table-variants.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_transition.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_utilities.scss" />
+    <Content Include="Contents\scss\bootstrap\mixins\_visually-hidden.scss" />
+    <Content Include="Contents\scss\bootstrap\utilities\_api.scss" />
+    <Content Include="Contents\scss\bootstrap\vendor\_rfs.scss" />
+    <Content Include="Contents\scss\bootstrap\_accordion.scss" />
+    <Content Include="Contents\scss\bootstrap\_alert.scss" />
+    <Content Include="Contents\scss\bootstrap\_badge.scss" />
+    <Content Include="Contents\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Contents\scss\bootstrap\_button-group.scss" />
+    <Content Include="Contents\scss\bootstrap\_buttons.scss" />
+    <Content Include="Contents\scss\bootstrap\_card.scss" />
+    <Content Include="Contents\scss\bootstrap\_carousel.scss" />
+    <Content Include="Contents\scss\bootstrap\_close.scss" />
+    <Content Include="Contents\scss\bootstrap\_containers.scss" />
+    <Content Include="Contents\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Contents\scss\bootstrap\_forms.scss" />
+    <Content Include="Contents\scss\bootstrap\_functions.scss" />
+    <Content Include="Contents\scss\bootstrap\_grid.scss" />
+    <Content Include="Contents\scss\bootstrap\_helpers.scss" />
+    <Content Include="Contents\scss\bootstrap\_images.scss" />
+    <Content Include="Contents\scss\bootstrap\_list-group.scss" />
+    <Content Include="Contents\scss\bootstrap\_mixins.scss" />
+    <Content Include="Contents\scss\bootstrap\_modal.scss" />
+    <Content Include="Contents\scss\bootstrap\_nav.scss" />
+    <Content Include="Contents\scss\bootstrap\_navbar.scss" />
+    <Content Include="Contents\scss\bootstrap\_pagination.scss" />
+    <Content Include="Contents\scss\bootstrap\_popover.scss" />
+    <Content Include="Contents\scss\bootstrap\_progress.scss" />
+    <Content Include="Contents\scss\bootstrap\_reboot.scss" />
+    <Content Include="Contents\scss\bootstrap\_root.scss" />
+    <Content Include="Contents\scss\bootstrap\_spinners.scss" />
+    <Content Include="Contents\scss\bootstrap\_tables.scss" />
+    <Content Include="Contents\scss\bootstrap\_toasts.scss" />
+    <Content Include="Contents\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Contents\scss\bootstrap\_transitions.scss" />
+    <Content Include="Contents\scss\bootstrap\_type.scss" />
+    <Content Include="Contents\scss\bootstrap\_utilities.scss" />
+    <Content Include="Contents\scss\bootstrap\_variables.scss" />
+    <Content Include="Contents\scss\components.scss" />
+    <Content Include="Contents\scss\core\.DS_Store" />
+    <Content Include="Contents\scss\core\animation\animation.scss" />
+    <Content Include="Contents\scss\core\breadcrumb\breadcrumb.scss" />
+    <Content Include="Contents\scss\core\buttons\buttons.scss" />
+    <Content Include="Contents\scss\core\core.scss" />
+    <Content Include="Contents\scss\core\extra\extra.scss" />
+    <Content Include="Contents\scss\core\layout\layout.scss" />
+    <Content Include="Contents\scss\core\loader\spinner.scss" />
+    <Content Include="Contents\scss\core\scafholdings\scafholding.scss" />
+    <Content Include="Contents\scss\core\sidebar\sidebar.scss" />
+    <Content Include="Contents\scss\core\topbar\header.scss" />
+    <Content Include="Contents\scss\core\topbar\notify.scss" />
+    <Content Include="Contents\scss\core\wave-effects\wave-effects.scss" />
+    <Content Include="Contents\scss\custom.scss" />
+    <Content Include="Contents\scss\mixins\padding-margin.scss" />
+    <Content Include="Contents\scss\responsive.scss" />
+    <Content Include="Contents\scss\style.scss" />
+    <Content Include="Contents\scss\theme-colors\theme-colors.scss" />
+    <Content Include="Contents\scss\variable.scss" />
+    <Content Include="Contents\scss\widgets\comments.scss" />
+    <Content Include="Contents\scss\widgets\feeds.scss" />
+    <Content Include="Contents\scss\widgets\profile.scss" />
+    <Content Include="Contents\scss\widgets\steamline.scss" />
+    <Content Include="Contents\scss\widgets\widgets.scss" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Category\List.cshtml" />
+    <Content Include="Views\Category\Add.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Brand\List.cshtml" />
+    <Content Include="Views\Brand\Add.cshtml" />
+    <Content Include="Views\Brand\Edit.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+    <Content Include="Views\Product\Add.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{03541da4-fb4e-480d-a1c8-2e7526b916a3}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{4ea8f2bf-623e-4b1d-98e2-d7d4accd741a}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64216</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44302/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

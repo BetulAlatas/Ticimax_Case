@@ -1,0 +1,67 @@
+﻿@model Web.ViewModel.CategoryViewModel
+@{
+    ViewBag.Title = "Kategori Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <!-- Row -->
+    <div class="row">
+        <!-- Column -->
+        <div class="col-lg-12 col-xlg-9 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material" action="/Category/Edit" method="post">
+                        <input type="hidden" name="Id" value="@Model.Category.Id" />
+                        <input type="hidden" name="Status" value="True" />
+                        <div class="form-group mb-4">
+                            <label class="col-sm-12">Üst Kategori</label>
+                            <div class="col-sm-12 border-bottom">
+                                <select class="form-select shadow-none p-0 border-0 form-control-line" name="ParentId">
+                                    @if (Model.Category.ParentId == null)
+                                    {
+                                        <option selected>Ana Kategori</option>
+                                    }
+                                    else
+                                    {
+                                        <option>Ana Kategori</option>
+                                    }
+                                    @foreach (var item in Model.Categories.Where(x=>x.Id!=Model.Category.Id).OrderBy(x => x.SortOrder))
+                                    {
+                                        if (item.Id == Model.Category.ParentId)
+                                        {
+                                            <option value="@item.Id" selected>@item.Name</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="example-email" class="col-md-12 p-0">Adı</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="text" class="form-control p-0 border-0" name="Name" value="@Model.Category.Name">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="col-md-12 p-0">Sıra No</label>
+                            <div class="col-md-12 border-bottom p-0">
+                                <input type="number" name="SortOrder" class="form-control p-0 border-0" value="@Model.Category.SortOrder">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div class="col-sm-12">
+                                <button class="btn btn-success">Kaydet</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+    </div>
+    <!-- Row -->   
+</div>
